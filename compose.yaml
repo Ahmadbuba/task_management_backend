@@ -1,9 +1,17 @@
 services:
   postgres:
-    image: 'postgres:latest'
+    image: 'postgres:16-alpine'
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_DB=task_application_db'
+      - 'POSTGRES_PASSWORD=wSDrL3VPP8s15'
+      - 'POSTGRES_USER=task_manager'
     ports:
       - '5432'
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+      - './src/main/resources/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql'
+
+
+volumes:
+  pgdata:
+

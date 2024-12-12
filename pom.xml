@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ahmad</groupId>
-	<artifactId>taskManager</artifactId>
+	<artifactId>taskTodo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>taskManager</name>
+	<name>taskTodo</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
