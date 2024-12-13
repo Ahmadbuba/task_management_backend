@@ -3,8 +3,8 @@ services:
     image: 'postgres:16-alpine'
     environment:
       - 'POSTGRES_DB=task_application_db'
-      - 'POSTGRES_PASSWORD=wSDrL3VPP8s15'
       - 'POSTGRES_USER=task_manager'
+      - 'POSTGRES_PASSWORD=wSDrL3VPP8s15'
     ports:
       - '5432'
     volumes:

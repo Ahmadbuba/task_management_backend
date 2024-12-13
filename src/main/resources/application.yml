@@ -1,3 +1,13 @@
+server:
+  port : '8282'
 spring:
   application:
     name: 'Task_Todo_App'
+rsa:
+  access-token:
+    private-key: classpath:certs/access_token_private.pem
+    public-key: classpath:certs/access_token_public.pem
+  refresh-token:
+    private-key:  classpath:certs/refresh_token_private.pem
+    public-key: classpath:certs/refresh_token_public.pem
+
