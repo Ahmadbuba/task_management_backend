@@ -1,12 +1,17 @@
 package com.ahmad.taskTodo.components.task.core.taskManagement.database.entity;
 
+import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
+import com.ahmad.taskTodo.common.audit.database.entity.Auditable;
+import com.ahmad.taskTodo.components.user.core.userManagement.database.entity.UserEntity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /*
 * Make entity all entity classes auditable and add
@@ -14,7 +19,8 @@ import lombok.Data;
 * */
 @Entity
 @Data
-public class TaskEntity {
+@EqualsAndHashCode(callSuper=false)
+public class TaskEntity extends Auditable {
 
     @Id
     private UUID id;
@@ -29,13 +35,16 @@ public class TaskEntity {
 
     private boolean completed;
 
+    private UUID userId;
 
-    protected TaskEntity() {}
+    private String userName;
 
-    public static TaskEntity create(final String title, final String description, final int priority, final ZonedDateTime dueDate) {
-        Objects.requireNonNull(title, "Title cannot be null");
-        Objects.requireNonNull(description, "Description cannot be null");
-        Objects.requireNonNull(dueDate, "Due date cannot be null");
+
+    protected TaskEntity() {
+        super();
+    }
+
+    public static TaskEntity create(final UUID userId, final String userName, final String title, final String description, final int priority, final ZonedDateTime dueDate) {
         final TaskEntity taskEntity = new TaskEntity();
         taskEntity.id = UUID.randomUUID();
         taskEntity.title = title;
@@ -43,6 +52,8 @@ public class TaskEntity {
         taskEntity.priority = priority;
         taskEntity.dueDate = dueDate;
         taskEntity.completed = false;
+        taskEntity.userId = userId;
+        taskEntity.userName = userName;
         return taskEntity;
     }
 
@@ -51,5 +62,21 @@ public class TaskEntity {
     * potentially create more static constructors to match various parameters
     * */
 
+
+    public String getCreatedBy() {
+        return super.getCreatedBy();
+    }
+
+    public String getLastModifiedBy() {
+        return super.getLastModifiedBy();
+    }
+
+    public Instant getCreationDate() {
+        return super.getCreationDate();
+    }
+
+    public Instant getLastModifiedDate() {
+        return super.getLastModifiedDate();
+    }
 
 }
