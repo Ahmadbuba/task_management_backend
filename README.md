@@ -22,7 +22,7 @@ Spring boot backend for oasis management fullstack developer asssessement(spring
 - Swagger UI **[View URL](http://localhost:8282/swagger-ui/index.html)**
 
 ## System Architecture
-We are building this application as a monolith with inspiration for loose coupling from Spring Modulith.
+We are building this application with inspiration from domain driven design and spring modulith though not included as dependency. This makes our app to grouped as bounded contexts
 
 We should aim to maintain loosely coupled packages who communicate via thier managers. For each component/microservice, only data, and rest package are exposed. 
 Data holds representation(DTO in this case) of entity for cross package communication. Rest contains two packages: dto and resource. Dto serves for taking in request while resource serve as resource(response)
