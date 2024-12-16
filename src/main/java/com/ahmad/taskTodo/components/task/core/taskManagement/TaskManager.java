@@ -81,6 +81,7 @@ public class TaskManager {
         return new TaskTodoAppTask(entity);
     }
 
+    @Transactional
     public void deleteTask(final String username, @NonNull final UUID taskId) {
         if (username == null || username.isEmpty()) {
             this.taskRepository.deleteById(taskId);

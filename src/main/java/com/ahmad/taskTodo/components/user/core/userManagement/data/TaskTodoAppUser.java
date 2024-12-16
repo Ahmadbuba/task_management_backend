@@ -36,9 +36,9 @@ public class TaskTodoAppUser {
     @NotNull
     private Instant lastModifiedDate;
     @NotNull
-    private Instant createdBy;
+    private String createdBy;
     @NotNull
-    private Instant lastModifiedBy;
+    private String lastModifiedBy;
 
     public TaskTodoAppUser(final UserEntity entity) {
         this.entity = entity;
@@ -48,6 +48,9 @@ public class TaskTodoAppUser {
         this.password = entity.getPassword();
         this.role = entity.getRole();
         this.active = entity.isActive();
+        this.creationDate = entity.getCreationDate();
+        this.lastModifiedDate = entity.getLastModifiedDate();
+        this.createdBy = entity.getCreatedBy();
     }
 
     public UserResource getResource() {
