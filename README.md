@@ -15,7 +15,7 @@ Spring boot backend for oasis management fullstack developer asssessement(spring
 - Flyway
 
 ### Application port
-- Refer to properties.yml: 8282
+- Refer to properties.yml: 8282: http://localhost:8282
 
 ### API Documentation
 - Springdoc Open-Api **[View URL](http://localhost:8282/finspeed-api-docs)**
