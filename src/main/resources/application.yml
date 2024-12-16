@@ -1,0 +1,29 @@
+server:
+  port : '8282'
+spring:
+  application:
+    name: 'Task_Todo_App'
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 600000
+      pool-name: taskTodoHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+rsa:
+  access-token:
+    private-key: classpath:certs/access_token_private.pem
+    public-key: classpath:certs/access_token_public.pem
+  refresh-token:
+    private-key:  classpath:certs/refresh_token_private.pem
+    public-key: classpath:certs/refresh_token_public.pem
+
