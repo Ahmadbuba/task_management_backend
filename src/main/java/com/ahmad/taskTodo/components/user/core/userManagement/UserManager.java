@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ahmad.taskTodo.components.user.core.userManagement.data.TaskTodoAppUser;
 import com.ahmad.taskTodo.components.user.core.userManagement.data.TaskTodoAppUsers;
@@ -59,11 +60,13 @@ public class UserManager {
     }
 
 
+    @Transactional
     public TaskTodoAppUser updateUser(final String name, @NonNull final String email) throws UserNotFoundException {
         final UserEntity entity = this.repository.findByEmail(email).orElseThrow(
                                                     () -> new UserNotFoundException("User with email " + email + " not found"));
         entity.setName(name);
         entity.setEmail(email);
+        this.repository.save(entity);
         return new TaskTodoAppUser(entity);
     }
 
