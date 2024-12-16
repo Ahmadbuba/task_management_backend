@@ -3,15 +3,10 @@ package com.ahmad.taskTodo.components.user.core.userManagement.data;
 import java.time.Instant;
 import java.util.UUID;
 
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
-
 import com.ahmad.taskTodo.components.user.core.userManagement.database.entity.UserEntity;
 import com.ahmad.taskTodo.components.user.core.userManagement.mapper.UserDataMapper;
 import com.ahmad.taskTodo.components.user.core.userManagement.rest.resource.UserResource;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 

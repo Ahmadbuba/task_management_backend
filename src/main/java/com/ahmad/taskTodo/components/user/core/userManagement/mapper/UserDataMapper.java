@@ -2,13 +2,11 @@ package com.ahmad.taskTodo.components.user.core.userManagement.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 
-import com.ahmad.taskTodo.components.user.core.userManagement.data.TaskTodoAppUsers;
 import com.ahmad.taskTodo.components.user.core.userManagement.database.entity.UserEntity;
 import com.ahmad.taskTodo.components.user.core.userManagement.rest.resource.UserResource;
 import com.ahmad.taskTodo.components.user.core.userManagement.rest.resource.UserResources;

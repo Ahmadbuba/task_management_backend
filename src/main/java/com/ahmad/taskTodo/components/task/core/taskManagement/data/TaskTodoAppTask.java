@@ -1,5 +1,6 @@
 package com.ahmad.taskTodo.components.task.core.taskManagement.data;
 
+import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
@@ -30,6 +31,10 @@ public class TaskTodoAppTask {
     private ZonedDateTime dueDate;
     @NotNull
     private boolean completed;
+    @NotNull
+    private Instant creationDate;
+    @NotNull
+    private Instant lastModifiedDate;
 
     public TaskTodoAppTask(final TaskEntity entity) {
         this.entity = entity;
@@ -39,6 +44,8 @@ public class TaskTodoAppTask {
         this.priority = entity.getPriority();
         this.dueDate = entity.getDueDate();
         this.completed = entity.isCompleted();
+        this.creationDate = entity.getCreationDate();
+        this.lastModifiedDate = entity.getLastModifiedDate();
     }
 
     public TaskResource getResource() {

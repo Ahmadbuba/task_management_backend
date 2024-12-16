@@ -1,7 +1,5 @@
 package com.ahmad.taskTodo.components.user.core.userManagement.data;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 
 import com.ahmad.taskTodo.components.user.core.userManagement.database.entity.UserEntity;

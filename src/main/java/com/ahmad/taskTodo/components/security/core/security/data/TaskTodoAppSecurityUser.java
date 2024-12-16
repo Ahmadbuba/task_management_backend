@@ -1,9 +1,10 @@
 package com.ahmad.taskTodo.components.security.core.security.data;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.ahmad.taskTodo.components.user.core.userManagement.data.TaskTodoAppUser;
@@ -17,7 +18,7 @@ public class TaskTodoAppSecurityUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return Set.of(new SimpleGrantedAuthority("ROLE_" + this.user.getRole()));
     }
 
     @Override

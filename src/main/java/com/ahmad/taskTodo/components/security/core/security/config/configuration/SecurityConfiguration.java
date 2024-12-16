@@ -15,9 +15,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
@@ -114,18 +112,15 @@ public class SecurityConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService()  {
-        return new UserDetailsService() {
-            @Override
-            public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
-                final TaskTodoAppUser user;
-                try {
-                    user = SecurityConfiguration.this.userManager.getUserByEmail(username);
-                }
-                catch (final UserNotFoundException e) {
-                    throw new AuthenticationCredentialsNotFoundException(e.getMessage());
-                }
-                return new TaskTodoAppSecurityUser(user);
+        return username -> {
+            final TaskTodoAppUser user;
+            try {
+                user = SecurityConfiguration.this.userManager.getUserByEmail(username);
             }
+            catch (final UserNotFoundException e) {
+                throw new AuthenticationCredentialsNotFoundException(e.getMessage());
+            }
+            return new TaskTodoAppSecurityUser(user);
         };
     }
 

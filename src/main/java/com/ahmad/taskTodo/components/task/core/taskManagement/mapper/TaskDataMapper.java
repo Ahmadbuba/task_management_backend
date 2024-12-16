@@ -7,11 +7,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 
-import com.ahmad.taskTodo.components.task.core.taskManagement.data.TaskTodoAppTasks;
 import com.ahmad.taskTodo.components.task.core.taskManagement.database.entity.TaskEntity;
 import com.ahmad.taskTodo.components.task.core.taskManagement.rest.resource.TaskResource;
 import com.ahmad.taskTodo.components.task.core.taskManagement.rest.resource.TaskResources;
-import com.ahmad.taskTodo.components.user.core.userManagement.rest.resource.UserResources;
 
 @Mapper
 public interface TaskDataMapper {

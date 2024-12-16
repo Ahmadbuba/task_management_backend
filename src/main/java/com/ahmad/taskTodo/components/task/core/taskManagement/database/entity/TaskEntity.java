@@ -2,11 +2,9 @@ package com.ahmad.taskTodo.components.task.core.taskManagement.database.entity;
 
 import java.time.Instant;
 import java.time.ZonedDateTime;
-import java.util.Objects;
 import java.util.UUID;
 
 import com.ahmad.taskTodo.common.audit.database.entity.Auditable;
-import com.ahmad.taskTodo.components.user.core.userManagement.database.entity.UserEntity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

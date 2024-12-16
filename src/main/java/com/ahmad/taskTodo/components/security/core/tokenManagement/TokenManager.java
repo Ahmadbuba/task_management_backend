@@ -26,7 +26,7 @@ public class TokenManager {
 
     private final JwtEncoder refreshTokenEncoder;
 
-    static final String ISSUER = "securityManagement";
+    private static final String ISSUER = "securityManagement";
 
 
     public TokenManager(final JwtEncoder accessTokenEncoder, @Qualifier("jwtRefreshTokenEncoder") final JwtEncoder refreshTokenEncoder) {

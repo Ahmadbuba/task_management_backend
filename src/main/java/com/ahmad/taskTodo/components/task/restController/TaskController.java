@@ -1,12 +1,10 @@
 package com.ahmad.taskTodo.components.task.restController;
 
-import java.security.Principal;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,9 +20,6 @@ import com.ahmad.taskTodo.components.task.core.taskManagement.rest.dto.CreateTas
 import com.ahmad.taskTodo.components.task.core.taskManagement.rest.dto.TaskDto;
 import com.ahmad.taskTodo.components.task.core.taskManagement.rest.resource.TaskResource;
 import com.ahmad.taskTodo.components.task.core.taskManagement.rest.resource.TaskResources;
-import com.ahmad.taskTodo.components.user.core.userManagement.rest.dto.CreateUserDto;
-import com.ahmad.taskTodo.components.user.core.userManagement.rest.resource.UserResource;
-import com.ahmad.taskTodo.components.user.core.userManagement.rest.resource.UserResources;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
